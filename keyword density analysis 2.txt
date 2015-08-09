@@ -1,0 +1,6 @@
+
+if(request.getParameter("subs")!=null)
+            {
+               RequestDispatcher rd=request.getRequestDispatcher("/show.jsp");
+               rd.forward(request, response);    
+            }

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title> Keyword Density Analysis </title>
+<style>
+.btn {
+                height: 30px;
+                width: 100px;
+                background: #3498db;
+                background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+                background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+                background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+                background-image: -o-linear-gradient(top, #3498db, #2980b9);
+                background-image: linear-gradient(to bottom, #3498db, #2980b9);
+                -webkit-border-radius: 28;
+                -moz-border-radius: 28;
+                border-radius: 28px;
+                font-family: Arial;
+                color: #ffffff;
+                font-size: 17px;
+                padding: 5px 20px 10px 20px;
+                text-decoration: none;
+}
+</style>
+</head>
+<body>
+<center>
+        <form action="serv1">
+            <h3><center>Paste your Text</center></h3>
+            <textarea name="ta1" rows="10" cols="50" placeholder="paste your text here"></textarea>
+            <br><br>
+            <Button type="submit" class="btn" name="subs">Submit</button>
+            <br><br>
+        </form>
+    </center>
+</body>
+</html>

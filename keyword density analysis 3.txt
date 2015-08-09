@@ -1,0 +1,52 @@
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Results Page</title>
+    </head>
+    <body>
+        <% String textars=request.getParameter("ta1");
+                 String textars1=textars.toLowerCase();
+                 String string2[]=textars1.split("[(' ').-]"); 
+                 HashMap<String, Integer> uniques = new HashMap<String, Integer>();
+                    for (String word : string2)
+                    {
+            // ignore words 2 or less characters long
+                    if (word.length() <= 2)
+                    {
+                        
+                        continue;
+                    }
+           
+                    Integer existingCount = uniques.get(word);
+                    uniques.put(word, (existingCount == null ? 1 : (existingCount + 1)));
+                    }
+                    Set<Map.Entry<String, Integer>> uniqueSet = uniques.entrySet();
+                    boolean first = true; %>
+                   <% double alen=string2.length; %>
+                   <table border="3">
+                        <tr class="td">
+                            <td width="150px"><center> Word</center> </td>
+                            <td width="150px"><center> Repeated Times</center> </td>
+                            <td width="150px"><center> Density</center> </td>
+                        </tr>
+                        <tr>
+                    <%
+                    for (Map.Entry<String, Integer> entry : uniqueSet)
+                    {
+                        double d;
+                        if (entry.getValue() > 1)
+                        { %>
+                            <% d=(entry.getValue()/alen)*100; %>
+                                <td> <center><% out.println(entry.getKey());%> </center></td>
+                                <td> <center><% out.println(entry.getValue()); %> </center></td>
+                                <td> <center><% out.println(d); %> </center></td>
+                     </tr> 
+                     <% } }%>
+                      
+                   </table> 
+                      <table>
+                          <tr>
+                              <td> Total Words: <%=alen%></td>
+                          </tr>
+                      </table>
+    </body>
+</html>
